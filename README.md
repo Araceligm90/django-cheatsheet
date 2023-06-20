@@ -203,3 +203,12 @@ Run the following command to install it: << npm install flowbite >>
 
 **8.2. To finish, paste the below script at the end of the <body> tag as shown in 'base.html'.**
 
+-------------
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+-------------
+
+**8.3. And don't forget to link the below stylesheet as shown in line 11 in 'base.html'.**
+
+-------------
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+-------------
