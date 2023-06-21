@@ -212,3 +212,52 @@ Run the following command to install it: << npm install flowbite >>
 -------------
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 -------------
+
+
+### 9. Testing
+
+In 'tests.py' import the following:
+
+-------------
+    from django.test import SimpleTestCase
+    from django.urls import reverse
+-------------
+
+Below is a sample test to check the 200 status of the home page:
+
+-------------
+    class ThingsTests(SimpleTestCase):
+        def test_home_page_status_code(self):
+        url = reverse('home')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+-------------
+
+**In order to run it, we type the following command in the terminal << python manage.py test >>**
+
+This second test asserts that the web page is using the 'home.html' and 'base.html'
+
+-------------
+    def test_home_page_templete(self):
+        url = reverse('home')
+        response = self.client.get(url)
+        self.assertTemplateUsed(response, 'home.html')
+        self.assertTemplateUsed(response, 'base.html')
+-------------
+
+And two more examples:
+
+-------------
+    def test_about_page_status_code(self):
+        url = reverse('about')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+-------------
+
+-------------
+    def test_about_page_templete(self):
+        url = reverse('about')
+        response = self.client.get(url)
+        self.assertTemplateUsed(response, 'about.html')
+        self.assertTemplateUsed(response, 'base.html')
+-------------
